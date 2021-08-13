@@ -15,7 +15,7 @@ import (
 
 var (
 	file           = flag.String("f", "", "input file")
-	inputFormat    = flag.String("i", "auto", "input format (roa|tal|cer|auto)")
+	inputFormat    = flag.String("i", "auto", "input format (roa|tal|cert|auto)")
 	outputFormat   = flag.String("o", "plain", "output format (plain|json)")
 	validateStrict = flag.Bool("s", false, "use strict validation")
 )
@@ -49,7 +49,7 @@ func main() {
 		if err != nil {
 			log.Fatal(err)
 		}
-	case "cer":
+	case "cert":
 		out, err = cert.Load(fileBytes, *outputFormat)
 		if err != nil {
 			log.Fatal(err)
