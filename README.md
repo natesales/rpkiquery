@@ -9,4 +9,4 @@ RPKI query utility
 
 ## Formats
 
-`rpiquery` can read ROA, TAL, and certificate files.
+`rpkiquery` can read ROA, TAL, and certificate files.
