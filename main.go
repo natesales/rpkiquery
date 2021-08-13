@@ -55,7 +55,6 @@ func main() {
 			log.Fatal(err)
 		}
 	case "auto":
-		out = "unable to automatically detect format"
 		out, err = roa.Load(decoder, fileBytes, *outputFormat)
 		if err == nil {
 			break
@@ -67,6 +66,9 @@ func main() {
 		out, err = cert.Load(fileBytes, *outputFormat)
 		if err == nil {
 			break
+		}
+		if out == "" {
+			out = "unable to automatically detect format"
 		}
 	default:
 		log.Fatal("input format must be one of tal|roa|cer|auto")
